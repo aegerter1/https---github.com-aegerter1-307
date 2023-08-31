@@ -37,18 +37,14 @@ include('config/app.php')
     <script src="<?php echo $site_url; ?>assets/js/bootstrap.min.js"></script>
     <script>
         const userAction = async () => {
-            const response = await fetch('https://campus.csbe.ch/sollberger-manuel/uek307/Authenticate', {
+            const response = await fetch('https://campus.csbe.ch/sollberger-manuel/uek307/Categories', {
                 mode: 'no-cors',
-                method: 'POST',
-                body: JSON.stringify({
-                    username: 'root',
-                    password: 'sUP3R53CR3T#',
-                }), // string or object
+                method: 'get',
+
                 headers: {
-                    'Content-Type': 'application/json',
-                    "access-control-allow-origin": "*",
-                    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-                    'Access-Control-Allow-Methods': '*',
+
+                    'Cookie': 'name=value; name2=value2',
+
                 }
             });
             const myJson = await response.json(); //extract JSON from the http response
